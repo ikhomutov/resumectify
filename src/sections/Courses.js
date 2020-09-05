@@ -11,6 +11,7 @@ function Courses({ data }) {
       {data.map((value, index) => {
         return (
           <SecondaryItem 
+            key={ index }
             title={ value.name }
             date={ value.date }
             company={ value.company }

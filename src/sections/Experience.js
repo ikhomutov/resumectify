@@ -12,6 +12,7 @@ function Experience(props) {
       {data.map((value, index) => {
         return (
           <PrimaryItem
+            key={ index }
             title={ value.position }
             company={ value.company }
             url={ value.website }

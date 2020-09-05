@@ -11,6 +11,7 @@ function Certificates({ data }) {
       {data.map((value, index) => {
         return (
           <SecondaryItem 
+            key={ index }
             title={ value.name }
             date={ value.date }
             description={ value.description }

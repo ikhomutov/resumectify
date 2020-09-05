@@ -11,6 +11,7 @@ function Projects({ data }) {
       {data.map((value, index) => {
         return (
           <SecondaryItem 
+            key={ index }
             title={ value.name }
             date={ value.dates }
             url={ value.link }

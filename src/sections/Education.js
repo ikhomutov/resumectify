@@ -12,6 +12,7 @@ function Education(props) {
       {data.map((value, index) => {
         return (
           <PrimaryItem
+            key={ index }
             title={ value.degree }
             company={ value.school }
             url={ value.website }

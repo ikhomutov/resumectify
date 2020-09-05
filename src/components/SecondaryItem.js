@@ -8,7 +8,7 @@ import { ReactComponent as OpenInNew } from '@mdi/svg/svg/open-in-new.svg';
 
 import useStyles from './SecondaryItem.styles';
 
-export default function PrimaryItem(props) {
+export default function SecondaryItem(props) {
   const { title, company, url, date, description, listItems } = props;
   const classes = useStyles();
 
@@ -18,7 +18,7 @@ export default function PrimaryItem(props) {
         { title } 
         { url && <Link href={ url }><SvgIcon component={ OpenInNew } fontSize='inherit'/></Link>}
       </Typography>
-      { date && <Typography item className={ classes.date }>{ date }</Typography> }
+      { date && <Typography className={ classes.date }>{ date }</Typography> }
       { company &&
         <Typography className={ classes.company }>
           { company }
