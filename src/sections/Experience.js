@@ -21,6 +21,7 @@ function Experience(props) {
             description={ value.description }
             listTitle='Responsibilities'
             listItems={ value.responsibilities }
+            keywords={ value.keywords }
           />
         )
       })}
