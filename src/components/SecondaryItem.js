@@ -14,9 +14,15 @@ export default function SecondaryItem(props) {
 
   return (
     <Box className={classes.wraper}>
-      <Typography className={ classes.title } variant='h4'>
-        { title } 
-        { url && <Link href={ url }><SvgIcon component={ OpenInNew } fontSize='inherit'/></Link>}
+      
+      <Typography variant='h5' className={ classes.title }>
+        { title }
+        <Box component='span' mx={0.3} />
+        { url &&
+        <Link href={ url } className={ classes.url }>
+          <SvgIcon component={ OpenInNew } className={ classes.icon }/>
+        </Link>
+        }
       </Typography>
       { date && <Typography className={ classes.date }>{ date }</Typography> }
       { company &&

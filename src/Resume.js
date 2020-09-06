@@ -16,9 +16,8 @@ import Interests from './sections/Interests';
 import useStyles from './Resume.styles';
 
 
-function Resume(props) {
-  const classes = useStyles();
-  const { data } = props;
+export default function Resume ({ data }) {
+  const classes = useStyles()
 
   return (
     <Container className={ classes.container }>
@@ -45,5 +44,3 @@ function Resume(props) {
     </Container>
   )
 }
-
-export default Resume

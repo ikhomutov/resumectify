@@ -7,17 +7,21 @@ export default makeStyles((theme) => ({
   },
   title: {
     fontSize: '21px',
-    fontWeight: 700,
   },
   company: {
-    marginBottom: theme.spacing(0.5),
   },
   date: {
     fontStyle: 'italic',
     color: theme.palette.primary.main,
   },
   description: {
-
+    color: theme.palette.secondary.main,
+  },
+  url: {
+    verticalAlign: 'middle',
+  },
+  icon: {
+    fontSize: '1rem',
   },
   listBullet: {
     width: theme.spacing(1),

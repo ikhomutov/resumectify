@@ -2,6 +2,10 @@ import { makeStyles } from '@material-ui/core/styles';
 
 
 export default makeStyles((theme) => ({
+  container: {
+    paddingLeft: 0,
+    paddingRight: 0,
+  },
   paper: {
     minHeight: '1280px',
     width: '890px',

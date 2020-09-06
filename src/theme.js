@@ -20,7 +20,7 @@ export const theme = createMuiTheme({
   palette: {
     primary: getThemeColor(),
     secondary: {
-      main: grey[500],
+      main: grey[700],
     },
   },
 });

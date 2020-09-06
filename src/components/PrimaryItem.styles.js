@@ -10,7 +10,7 @@ export default makeStyles((theme) => ({
     fontWeight: 700,
   },
   company: {
-    marginBottom: theme.spacing(0.5),
+    marginBottom: theme.spacing(0.25),
   },
   dates: {
     fontStyle: 'italic',
@@ -20,8 +20,13 @@ export default makeStyles((theme) => ({
     fontStyle: 'italic',
     color: theme.palette.primary.main,
   },
+  description: {
+    color: theme.palette.secondary.main,
+  },
+  url: {
+    verticalAlign: 'middle',
+  },
   listTitle: {
-    color: theme.palette.primary.main,
     fontStyle: 'italic',
     marginBottom: theme.spacing(0.5),
   },

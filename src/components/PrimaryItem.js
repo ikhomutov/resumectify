@@ -13,13 +13,18 @@ export default function PrimaryItem(props) {
   const classes = useStyles();
 
   return (
-    <Box className={classes.wraper}>
+    <Box className={ classes.wraper }>
       <Typography className={ classes.title } variant='h4'>
         { title }
       </Typography>
       <Typography className={ classes.company }>
         { company }
-        { url && <Link href={ url }><SvgIcon component={OpenInNew} fontSize='inherit'/></Link>}
+        <Box component='span' mx={0.3} />
+        { url && 
+          <Link href={ url } className={ classes.url }>
+            <SvgIcon component={OpenInNew} fontSize='inherit'/>
+          </Link>
+        }
       </Typography>
       <Grid container justify='space-between'>
         <Grid item className={ classes.dates }>{ dates }</Grid>
@@ -31,7 +36,7 @@ export default function PrimaryItem(props) {
       { listItems &&
         <Box>
           <Box className={ classes.listTitle }>
-            { listTitle }
+            { listTitle }:
           </Box>
           { listItems.map((item, index) => (
             <Grid container key={ index } className={ classes.listItem } alignItems='center'>

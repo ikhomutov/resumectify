@@ -6,9 +6,10 @@ export default makeStyles((theme) => ({
     marginBottom: theme.spacing(1),
   },
   title: {
-    width: theme.spacing(20),
+    width: theme.spacing(15),
     fontWeight: 700,
     textTransform: 'capitalize',
+    color: theme.palette.primary.main,
   },
   skill: {
   }
