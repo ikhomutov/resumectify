@@ -4,6 +4,9 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
   wraper: {
     marginBottom: theme.spacing(3),
+    '@media print': {
+      pageBreakInside: 'avoid',
+    },
   },
   title: {
     fontSize: '21px',
