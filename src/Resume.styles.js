@@ -12,6 +12,9 @@ export default makeStyles((theme) => ({
     minHeight: '1280px',
     width: '890px',
     margin: 'auto',
+    '@media print': {
+      boxShadow: 'none',
+    },
   },
   header: {
     paddingTop: theme.spacing(2),
