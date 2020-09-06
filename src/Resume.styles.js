@@ -3,6 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
   container: {
+    paddingTop: theme.spacing(3),
+    paddingBottom: theme.spacing(3),
     paddingLeft: 0,
     paddingRight: 0,
   },
