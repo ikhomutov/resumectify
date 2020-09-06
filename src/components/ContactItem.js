@@ -10,12 +10,16 @@ import { ReactComponent as Linkedin } from '@mdi/svg/svg/linkedin.svg';
 import { ReactComponent as Twitter } from '@mdi/svg/svg/twitter.svg';
 import { ReactComponent as Skype } from '@mdi/svg/svg/skype.svg';
 import { ReactComponent as MapMarker } from '@mdi/svg/svg/map-marker.svg';
-import { ReactComponent as Account } from '@mdi/svg/svg/account.svg';
+import { ReactComponent as Web } from '@mdi/svg/svg/web.svg';
 
 import useStyles from './ContactItem.styles';
 
 
 export const contactItemMapping = {
+  website: {
+    icon: Web,
+    linkText: text => `https://${text}`,
+  },
   telegram: {
     icon: Telegram,
     linkText: (text) => `https://t.me/${text}`
@@ -54,11 +58,14 @@ export default function ContactItem({ type, text, className }) {
   const item = contactItemMapping[type];
   const classes = useStyles();
 
-  return (
-    <Link href={item ? item.linkText(text) : null} className={ classes.item } color='inherit' underline='none'>
-      <SvgIcon component={item ? item.icon : Account} color='primary' fontSize='inherit'/>
-      <Box component='span' mx={0.5} />
-      {text}
-    </Link>
-  )
+  if (item) {
+    return (
+      <Link href={item.linkText(text)} className={ classes.item } color='inherit' underline='none'>
+        <SvgIcon component={item.icon} color='primary' fontSize='inherit'/>
+        <Box component='span' mx={0.5} />
+        {text}
+      </Link>
+    )
+  }
+  return null
 }
