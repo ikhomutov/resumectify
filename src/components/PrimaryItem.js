@@ -53,7 +53,7 @@ export default function PrimaryItem(props) {
       { keywords &&
         <Grid container spacing={1}>
           { keywords.map((keyword, index) => (
-            <Grid item>
+            <Grid item key={ index }>
               <Chip label={ keyword } variant='outlined' size='small' />
             </Grid>
           ))}

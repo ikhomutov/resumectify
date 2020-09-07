@@ -1,5 +1,6 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 import { red, pink, blue, cyan, teal, orange, green, grey } from '@material-ui/core/colors';
+import { userColor } from './config';
 
 const muiColorMapping = {
   blue,
@@ -12,8 +13,7 @@ const muiColorMapping = {
 }
 
 function getThemeColor() {
-  const userColor = muiColorMapping[process.env.REACT_APP_COLOR]
-  return userColor || blue
+  return muiColorMapping[userColor] || blue
 }
 
 export const theme = createMuiTheme({

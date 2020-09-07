@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactGA from 'react-ga';
 import yaml from 'js-yaml';
-import Backdrop from '@material-ui/core/Backdrop';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import { ThemeProvider } from '@material-ui/styles';
+import ThemeProvider from '@material-ui/styles/ThemeProvider';
 
+import Loader from './components/Loader';
 import Resume from './Resume';
+
 import { theme } from './theme';
-import { googleAnalytics } from './config';
+import { googleAnalytics, resumeUrl } from './config';
+
 
 
 class App extends React.Component {
@@ -28,11 +29,13 @@ class App extends React.Component {
   onYamlRead(doc) {
     const requiredFields = ['name', 'title', 'contacts'];
     const fieldMissing = [];
+
     requiredFields.forEach((field) => {
       if (!(field in doc)) {
         fieldMissing.push(field)
       }
     });
+
     if (fieldMissing.length) {
       this.setState({
         isLoading: false,
@@ -47,7 +50,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch(process.env.REACT_APP_RESUME_URL)
+    fetch(resumeUrl)
       .then(response => {
         return response.text()})
       .then(function(data) {
@@ -62,9 +65,7 @@ class App extends React.Component {
   render() {
     if (this.state.isLoading) {
       return (
-        <Backdrop open={true}>
-          <CircularProgress color="inherit" />
-        </Backdrop>
+        <Loader />
       )
     } else if (this.state.error) {
       return <div>{this.state.error}</div>
@@ -77,4 +78,5 @@ class App extends React.Component {
     }
   };
 }
+
 export default App;
